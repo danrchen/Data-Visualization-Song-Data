@@ -1,0 +1,12 @@
+key_tab <- table(songs$key)
+chisq.test(key_tab, correct = FALSE)
+
+mode_key_tab <- table(songs$mode, songs$key) 
+chisq.test(mode_key_tab, correct = FALSE)
+mode_key_test <- chisq.test(mode_key_tab, correct = FALSE) ## checking conditions
+mode_key_test$expected
+
+key_ts_table <- table(songs$key, songs$time_signature) 
+chisq.test(key_ts_table, correct = FALSE)
+key_ts_test <- chisq.test(key_ts_table, correct = FALSE) ## checking conditions
+key_ts_test$expected
